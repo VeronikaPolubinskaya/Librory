@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jkm5r8ws7va3$5d_t1@ca_9z)(!_aihrrv#r1zfz35p(wq312+'
+SECRET_KEY = '#############################'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library',
         'USER': 'user1',
-        'PASSWORD': 'user2023',
+        'PASSWORD': '#######',
         'HOST': 'localhost',
         'PORT': 3306,
     }
@@ -129,13 +129,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "searchmp2@gmail.com"
-EMAIL_HOST_PASSWORD = 'ores gcvm rvfb unsl'
+EMAIL_HOST_USER = "your@gmail.com"
+EMAIL_HOST_PASSWORD = '#### #### #### ####'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
