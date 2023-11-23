@@ -11,4 +11,4 @@ class User(models.Model):
         verbose_name_plural = 'Пользователи'
 
     def __str__(self):
-        return f'{self.id} Пользователь {self.name}'
+        return f'{self.id}. Пользователь библиотеки {self.name}'
