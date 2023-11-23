@@ -47,3 +47,9 @@ def delete_book(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     book.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def find_book_by_name(request, book_name):
+    book = get_object_or_404(Book, name=book_name)
+    serializer = BookSerializer(book)
+    return Response(serializer.data)
