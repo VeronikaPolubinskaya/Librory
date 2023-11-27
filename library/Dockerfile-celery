@@ -1,0 +1,23 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY . /app/
+
+
+RUN apt update && apt install -y pkg-config
+
+RUN apt update \
+  && apt-get install -y --no-install-recommends \
+    default-libmysqlclient-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV MYSQLCLIENT_CFLAGS="-I/usr/include/mysql"
+ENV MYSQLCLIENT_LIBS="-L/usr/lib -lmysqlclient"
+
+COPY requirements.txt .
+RUN pip install mysqlclient==2.1.0
+RUN pip install -r requirements.txt
+
+
+CMD celery -A library worker -l info --pool=solo
